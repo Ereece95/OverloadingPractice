@@ -11,48 +11,9 @@ Notes:
 */
 
 #include <iostream>
-#include "OverloadOps.h"
+#include "Test.h"
 using namespace std;
 
-
-class Test
-{
-private:
-	int id;
-	string name;
-
-public:
-	Test() :
-		id(0), name("") {
-
-	}
-
-	Test(int id, string name) : id(id), name(name) {
-
-	}
-
-	void printTest()
-	{
-		cout << id << ": " << name << endl;
-	}
-
-	// Operator overloading for "="
-	const Test& operator=(const Test& other)
-	{
-		cout << "Assignment running" << endl;
-
-		id = other.id;
-		name = other.name;
-		return *this;
-	}
-
-	// Operator overloading for copy contrusctor
-	Test(const Test& other)
-	{
-		cout << "Copy constructor running" << endl;
-		*this = other;
-	}
-};
 
 int main()
 {
